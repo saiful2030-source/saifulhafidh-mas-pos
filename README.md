@@ -64,12 +64,12 @@ vendor/bin/sail php artisan octane:install
 ```
 
 ## Progress
-[ ✓ ] Docker Friendly
-[ ] User Module
-[ ] Role Permission
-[ ] Multi Tenant
-[ ] Landing Page
-[ ] App Setting
-[ ] Testing
+- [ ✓ ] Docker Friendly
+- [ ] User Module
+- [ ] Role Permission
+- [ ] Multi Tenant
+- [ ] Landing Page
+- [ ] App Setting
+- [ ] Testing
 
 ## Happy Code !
