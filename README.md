@@ -56,11 +56,20 @@ php artisan filament:optimize-clear
 ```
 
 ## Just a Note
-Fresh project need this:
+Fresh project who use **docker** need this:
 
 Install Octane
 ```
 vendor/bin/sail php artisan octane:install
 ```
+
+## Progress
+- [✓] Docker Friendly
+- [ ] User Module
+- [ ] Role Permission
+- [ ] Multi Tenant
+- [ ] Landing Page
+- [ ] App Setting
+- [ ] Testing
 
 ## Happy Code !
