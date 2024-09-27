@@ -64,7 +64,7 @@ vendor/bin/sail php artisan octane:install
 ```
 
 ## Progress
-- [ ✓ ] Docker Friendly
+- [x] Docker Friendly
 - [ ] User Module
 - [ ] Role Permission
 - [ ] Multi Tenant
