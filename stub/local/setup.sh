@@ -1,13 +1,20 @@
-composer install
+APP_NAME="${1:-app-name}"
 
-chmod -R ugo+rw vendor/
-chmod -R ugo+rw bootstrap/cache/
-chmod -R ugo+rw storage/
+cp .env.example .env
+cp stub/local/docker-compose.yml.default docker-compose.yml
 
-chmod ugo+rw composer.lock
-chmod ugo+rw composer.json
+docker compose up -d
 
-php artisan migrate --seed
-npm install chokidar
-cp stub/local/frankenphp frankenphp
-php artisan octane:install
+docker exec $APP_NAME composer install
+
+docker exec $APP_NAME chmod -R ugo+rw vendor/
+docker exec $APP_NAME chmod -R ugo+rw bootstrap/cache/
+docker exec $APP_NAME chmod -R ugo+rw storage/
+
+docker exec $APP_NAME chmod ugo+rw composer.lock
+docker exec $APP_NAME chmod ugo+rw composer.json
+
+docker exec $APP_NAME php artisan migrate --seed
+docker exec $APP_NAME npm install chokidar
+docker exec $APP_NAME cp stub/local/frankenphp frankenphp
+docker exec $APP_NAME php artisan octane:install

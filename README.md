@@ -13,25 +13,15 @@
 2. Run <code>php artisan migrate --seed</code>
 
 ## Docker Usage
-```
-cp .env.example .env
-cp docker-compose.yml.default docker-compose.yml
-```
-
-```
-docker compose up -d
-docker exec -it starter-project-app bash
-```
-### On Shell
 
 #### Development Environment
 ```
-sh stub/local/setup.sh
+sh stub/local/setup.sh your-docker-container-name
 ```
 
 #### Production Environment
 ```
-sh stub/prod/setup.sh
+sh stub/prod/setup.sh your-docker-container-name
 ```
 
 ### Docker Usage Note

@@ -4,9 +4,9 @@ services:
             context: './vendor/laravel/sail/runtimes/8.3'
             dockerfile: Dockerfile
             args:
-                WWWGROUP: '${WWWGROUP}'
+                WWWGROUP: '${WWWGROUP:-10000}'
         image: 'sail-8.3/app'
-        container_name: 'starter-project-app'
+        container_name: '${CONTAINER_NAME:-starter-project}-app'
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -39,7 +39,7 @@ services:
         image: 'postgres:15'
         ports:
             - '${FORWARD_DB_PORT:-5432}:5432'
-        container_name: 'starter-project-pgsql'
+        container_name: '${CONTAINER_NAME:-starter-project}-pgsql'
         environment:
             PGPASSWORD: '${DB_PASSWORD:-secret}'
             POSTGRES_DB: '${DB_DATABASE}'
@@ -63,7 +63,7 @@ services:
             timeout: 5s
     redis:
         image: 'redis:alpine'
-        container_name: 'starter-project-redis'
+        container_name: '${CONTAINER_NAME:-starter-project}-redis'
         ports:
             - '${FORWARD_REDIS_PORT:-6379}:6379'
         volumes:
