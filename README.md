@@ -8,7 +8,7 @@
 3. XAMPP/MAMPP/Other (Minimum PHP Version 8.2)
 
 ### How to Run the Application
-1. Clone this repository <code>git clone https://github.com/naufal-rafif/laravel-filament-starter.git</code>
+1. Clone this repository <code>git clone https://github.com/naufal-rafif/laravel-filament-starter.git appname</code>
 2. Run <code>composer install</code>
 2. Run <code>php artisan migrate --seed</code>
 
@@ -26,24 +26,18 @@ docker exec -it starter-project-app bash
 In shell:
 ```
 composer install
-```
 
-```
 chmod -R ugo+rw vendor/
 chmod -R ugo+rw bootstrap/cache/
 chmod -R ugo+rw storage/
-```
 
-```
-chmod -R ugo+rw composer.lock
-chmod -R ugo+rw composer.json
+chmod ugo+rw composer.lock
+chmod ugo+rw composer.json
+
+php artisan migrate --seed
 ```
 
 ## Filament Cheat Sheet
-Create dummy user admin
-```
-php artisan make:filament-user
-```
 
 Optimize filament on Production
 ```
