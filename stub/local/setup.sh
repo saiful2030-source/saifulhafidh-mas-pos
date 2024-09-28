@@ -1,6 +1,7 @@
 APP_NAME="${1:-app-name}"
 
 cp .env.example .env
+sed -i "s/^CONTAINER_NAME=.*/CONTAINER_NAME=$APP_NAME/" .env
 cp stub/local/docker-compose.yml.default docker-compose.yml
 
 docker compose up -d
