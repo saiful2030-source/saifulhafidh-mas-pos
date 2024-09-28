@@ -19,7 +19,6 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+docker-compose.yml
 
 /caddy
-frankenphp
-frankenphp-worker.php

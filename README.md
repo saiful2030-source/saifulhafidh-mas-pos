@@ -22,20 +22,21 @@ cp docker-compose.yml.default docker-compose.yml
 docker compose up -d
 docker exec -it starter-project-app bash
 ```
+### On Shell
 
-In shell:
+#### Development Environment
 ```
-composer install
-
-chmod -R ugo+rw vendor/
-chmod -R ugo+rw bootstrap/cache/
-chmod -R ugo+rw storage/
-
-chmod ugo+rw composer.lock
-chmod ugo+rw composer.json
-
-php artisan migrate --seed
+sh stub/local/setup.sh
 ```
+
+#### Production Environment
+```
+sh stub/prod/setup.sh
+```
+
+### Docker Usage Note
+- On development we use npm package **chokidar** to update change when reload. You can remove `--watch` on **supervisord.conf** or you can choose setup on production mode
+- We use Laravel Octane with frankenphp server, you can change or remove it if you don't want use it
 
 ## Filament Cheat Sheet
 
@@ -50,12 +51,8 @@ php artisan filament:optimize-clear
 ```
 
 ## Just a Note
-Fresh project that use **docker** need this:
 
-Install Octane
-```
-vendor/bin/sail php artisan octane:install
-```
+You can directly show the error on the storage/logs file
 
 ## Progress
 - [x] Docker Friendly
