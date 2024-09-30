@@ -60,6 +60,8 @@ php artisan filament:optimize-clear
 
 You can directly show the error on the storage/logs file
 
+test user can be found at database/seeders/UserSeeder.php 
+
 ## Progress
 - [x] Docker Friendly
 - [x] User Module
