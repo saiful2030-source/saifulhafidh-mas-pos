@@ -1,4 +1,5 @@
 CONTAINER_NAME=$(grep ^CONTAINER_NAME= .env | cut -d '=' -f2 | tr -d '"')
+sed -i.bak "s/^DB_HOST=.*/DB_HOST=$NEW_DB_HOST/" .env
 
 CONTAINER_NAME=${CONTAINER_NAME:-starter-project}
 docker compose up -d

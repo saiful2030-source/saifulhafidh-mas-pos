@@ -17,6 +17,9 @@
 5. Run <code>npm install</code>
 6. Run <code>npm run dev</code> for development mode and  <code>npm run build</code> for production mode
 
+### NOTE
+- please change your .env file, change the config database, and app as you want.
+
 ## Docker Usage
 
 Change environment and 
