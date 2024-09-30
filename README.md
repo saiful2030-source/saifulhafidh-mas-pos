@@ -6,6 +6,7 @@
 1. Visual Studio Code/Sublime/Other Text Editor
 2. Composer
 3. XAMPP/MAMPP/Other (Minimum PHP Version 8.2)
+4. NodeJs (for development purpose)
 
 ### How to Run the Application
 1. Clone this repository <code>git clone https://github.com/naufal-rafif/laravel-filament-starter.git appname</code>
@@ -13,6 +14,8 @@
 3. Make sure your xampp mysql and server is run.
 4. Run <code>php artisan migrate --seed</code>
 5. Run <code>php artisan serve</code>
+5. Run <code>npm install</code>
+6. Run <code>npm run dev</code> for development mode and  <code>npm run build</code> for production mode
 
 ## Docker Usage
 
@@ -56,10 +59,10 @@ You can directly show the error on the storage/logs file
 
 ## Progress
 - [x] Docker Friendly
-- [ ] User Module
+- [x] User Module
 - [ ] Role Permission
 - [ ] Multi Tenant
-- [ ] Landing Page
+- [x] Landing Page
 - [ ] App Setting
 - [ ] Testing
 
