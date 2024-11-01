@@ -25,3 +25,5 @@ docker-compose.yml
 
 frankenphp
 frankenphp-worker.php
+
+**/caddy
