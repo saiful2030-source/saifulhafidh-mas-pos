@@ -9,7 +9,7 @@
 4. NodeJs (for development purpose)
 
 ### How to Run the Application
-1. Clone this repository <code>git clone https://github.com/naufal-rafif/laravel-filament-starter.git appname</code>
+1. Clone this repository <code>git clone https://github.com/saiful2030-source/saifulhafidh-mas-pos appname</code>
 2. Run <code>composer install</code>
 3. Make sure your xampp mysql and server is run.
 4. Run <code>php artisan migrate --seed</code>
