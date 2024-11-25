@@ -17,7 +17,7 @@
             {{ $slot }}
         </main>
 
-        <livewire:components.footer />
+        
     </div>
 
     @livewireScripts

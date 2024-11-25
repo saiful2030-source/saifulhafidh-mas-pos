@@ -1,51 +1,56 @@
 .row.flex-row {
     display: flex;
     flex-wrap: nowrap;
-    gap: 16px; /* Mengatur jarak antar kartu */
-    overflow-x: auto; /* Scroll horizontal untuk kartu */
-    padding-bottom: 10px; /* Tambahkan padding bawah agar tidak terpotong */
+    gap: 0; 
+    overflow-x: auto; 
+    padding-bottom: 10px; 
 }
 
 .row.flex-row .col-12 {
-    flex: 0 0 250px; /* Tetapkan lebar konsisten untuk setiap kartu */
+    flex: 0 0 250px; 
 }
 
 .product-card {
-    min-width: 200px; /* Lebar minimum */
-    max-width: 200px; /* Lebar maksimum agar semua kartu konsisten */
-    min-height: 300px; /* Tentukan tinggi minimum untuk konsistensi */
+    min-width: 200px; 
+    max-width: 200px; 
+    min-height: 300px;
+    max-height: 300px; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    text-align:left; /* Tengah semua konten */
+    text-align:left; 
     display: flex;
-    flex-direction: column; /* Pastikan elemen di dalam kartu berbaris vertikal */
+    flex-direction: column; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .product-card .card-img-top {
-    height: 200px;
+    height: 165px;
     width: 100%;
-    object-fit: cover; /* Agar gambar sesuai dengan ukuran tanpa distorsi */
-    border-bottom: 1px solid #eaeaea; /* Tambahkan garis bawah untuk pemisah */
+    object-fit: cover; 
+    border-bottom: 1px solid #4f4d4d; 
 }
 
 .product-card .card-body {
-    padding: 20px;
-    flex-grow: 1; /* Memastikan card-body mengisi ruang yang tersisa */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ruang antar konten dalam body */
+    justify-content: space-between; 
 }
 
 .product-card .card-title {
-    font-size: 1.2rem;
+    font-size: 18px;
     font-weight: normal;
-    margin-bottom: 10px;
+    margin-bottom: -5px;
 }
 
 .product-card .price {
-    font-size: 1.4rem;
+    font-size: 20px;
     font-weight: bold;
     color: #000;
     margin-bottom: 15px;
@@ -54,7 +59,7 @@
 .product-card .add-to-cart-btn {
     font-size: 12px;
     font-weight: bold;
-    background-color: #007bff; /* Warna biru seperti di gambar */
+    background-color: #007bff;
     border-color: #007bff;
     color: white;
     padding: 10px 20px;
@@ -86,9 +91,62 @@
     margin-top: auto;
 }
 
+.btn-second{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #B3D4FF99; 
+    border-color: #007bff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.total-bill{
+    display: flex;
+    justify-content: right;
+    align-items: center mb-4;
+    margin-bottom: 12px;
+}
+
 .header {
     display: flex;
     justify-content: right;
     align-items: center mb-4;
     margin-bottom: 12px;
+}
+
+
+.category-filter {
+    display: flex;
+    gap: 20px; 
+    font-size: 14px;
+    margin-left: 16px;
+    margin-bottom: 20px;
+}
+
+
+.category-filter button {
+    background: none;
+    border: none;
+    color: #6c757d; 
+    font-weight: medium;
+    padding: 0;
+    cursor: pointer;
+}
+
+.category-filter .active {
+    color: #007bff; 
+    position: relative;
+}
+
+.category-filter .active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    border-radius: 1px;
 }

@@ -1,24 +1,41 @@
-<div>
-
+<div class="content-wrapper">  
     <div class="container mt-4">
         <div class="header">
-            <div>
-                <a href="/cart"><button class="btn btn-primary">Cart</button></a>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <a href="/dashboard/categories/create"><button class="btn btn-second">ADD MY CATEGORY</button></a>
+                    <a href="/dashboard/products/create"><button class="btn btn-second">ADD MY PRODUCT</button></a>
+                    <a href="/cart"><button class="btn btn-primary">MY CART</button></a>
+                </div>
             </div>
+
         </div>
+        <div class="category-filter">
+            <button wire:click="filterCategory()" 
+                    class="{{ !$selectedCategory ? 'active' : '' }}">
+                All 
+            </button> 
+            @foreach($categories as $category)
+                <button wire:click="filterCategory({{ $category->id }})" 
+                        class="{{ $selectedCategory == $category->id ? 'active' : '' }}">
+                    {{ $category->name }}
+                </button>
+            @endforeach
+        </div>
+        
+
 
         <div class="container">
             <div class="row flex-row flex-nowrap overflow-auto">
                 @foreach($products as $product)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                     <div class="card product-card">
-                        <!-- Menggunakan asset() untuk memastikan URL foto benar -->
                         <img src="{{ asset('storage/' . $product->photo) }}" class="card-img-top" alt="{{ $product->name }}">
                         <button class="btn btn-danger btn-sm delete-btn"></button>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-title">{{ $product->name }}</p>
                             <p class="card-text price">Rp. {{ number_format($product->price, 0, ',', '.') }}</p>
-                            <button wire:click="addToCart({{ $product->id }})" class="btn btn-primary w-100 add-to-cart-btn">+ Add to Cart</button>
+                            <button wire:click="addToCart({{ $product->id }})" class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -26,6 +43,16 @@
             </div>
         </div>
 
-        
+        <hr>
+
+        <div class="total-bill">
+            <a href="/cart"><button class="btn btn-primary">My Bill : Rp. {{ number_format($total, 0, ',', '.') }}</button></a>
+        </div>
+
+        <div wire:loading wire:target="filterCategory" class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-75">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Processing...^_^</span>
+            </div>
+        </div>
     </div>
 </div>

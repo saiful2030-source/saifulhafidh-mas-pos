@@ -6,8 +6,8 @@
             <svg class="w-16 h-16 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
+            
         </div>
-        
         
         <a href="{{ route('home') }}"><button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
             Back to Home
